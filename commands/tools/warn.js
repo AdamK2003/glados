@@ -5,7 +5,7 @@ const db = process.env.DB
 
 mongoose.connect(db)
 
-const Warn = require('/home/runner/glados/models/warn.js')
+const Warn = require(process.env.ROOTDIR + '/models/warn.js')
 
 
 const Discord = require('discord.js')
