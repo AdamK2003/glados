@@ -1,4 +1,4 @@
 while [ true ]; do
-git pull
+git pull -f
 node server.js
 done
