@@ -16,6 +16,8 @@ const { handle, run } = require('penguin-handler')
 const { handleLevel } = require(__dirname + '/functions/levels.js') 
 
 
+botToken = process.env.TOKEN
+prefix = process.env.PREFIX
 
 
 
@@ -25,7 +27,8 @@ client.login(botToken)
 
 client.on('ready', () => handle('./commands'))
 client.on('message', msg => {
-  run(',', client, msg)
+  handleUpdate(prefix, message)
+  run(prefix, client, msg)
   handleLevel(client, msg)
 })
 
@@ -42,3 +45,12 @@ app.get("/", (req, res) => {
 app.get("/status", (req, res) => {
     res.sendFile(__dirname + "/web/status.html");
 });
+
+const handleUpdate = function (prefix, message) {
+  if((message.content == `${prefix}update`)&&(message.author.id == '206125763328606208')) {
+    message.channel.send("Restarting and updating bot...")
+    process.exit(0)
+  }
+}
+
+// test
