@@ -3,8 +3,7 @@ const Discord = require('discord.js')
 const mongoose = require('mongoose')
 const db = process.env.DB
 
-const mongouri = db.db
-mongoose.connect(mongouri)
+mongoose.connect(db)
 
 const Level = require(process.env.ROOTDIR + '/models/level.js')
 const ServerSettings = require(process.env.ROOTDIR + '/models/serverSettings.js')
