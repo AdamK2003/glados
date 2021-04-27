@@ -1,4 +1,4 @@
-const botToken = ('ODE3ODM5NjM0MzMxNDY3ODA5.YEPWgw.9zEU9eH8Hm2A9EH6O46vMwbn-8k')
+
 
 const express = require('express')
 const http = require('http')
