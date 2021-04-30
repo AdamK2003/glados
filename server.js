@@ -35,7 +35,7 @@ client.on('message', msg => {
 
 
 
-
+// <webserver>
 app.listen(3000)
 
 app.get("/", (req, res) => {
@@ -45,6 +45,7 @@ app.get("/", (req, res) => {
 app.get("/status", (req, res) => {
     res.sendFile(__dirname + "/web/status.html");
 });
+// </webserver>
 
 const handleUpdate = function (prefix, message) {
   if((message.content == `${prefix}update`)&&(message.author.id == '206125763328606208')) {
