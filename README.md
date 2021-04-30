@@ -1,2 +1,2 @@
-# glados
+# GLaDOS
 General purpose Discord bot
