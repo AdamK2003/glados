@@ -28,8 +28,8 @@ client.login(botToken)
 client.on('ready', () => handle('./commands'))
 client.on('message', msg => {
   handleUpdate(prefix, msg)
-  run(prefix, client, msg)
   handleLevel(client, msg)
+  run(prefix, client, msg)
 })
 
 
@@ -53,5 +53,3 @@ const handleUpdate = function (prefix, message) {
     process.exit(0)
   }
 }
-
-// test

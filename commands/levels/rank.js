@@ -16,13 +16,16 @@ module.exports.help = {
 module.exports.run = async (client, message, args) => {
   if(!message.mentions.members.first()) {
   await Level.find({ userID: message.author.id, guildID: message.channel.guild.id }, (err, arr) => { 
+    if(!arr) return obj = null
    return obj = getLevel(arr)
   })
   user = message.author
   } else {
   await Level.find({ userID: message.mentions.members.first().id, guildID: message.channel.guild.id }, (err, arr) => { 
+    if(!arr) return obj = null
    return obj = getLevel(arr)
   })
+  if(obj = null)
   user = message.mentions.members.first().user
   }
   const embed = new Discord.MessageEmbed()
