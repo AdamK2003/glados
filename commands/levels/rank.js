@@ -14,7 +14,7 @@ module.exports.help = {
 
 
 module.exports.run = async (client, message, args) => {
-  if(!args[1]) {
+  if(!message.mentions.members.first()) {
   await Level.find({ userID: message.author.id, guildID: message.channel.guild.id }, (err, arr) => { 
    return obj = getLevel(arr)
   })
