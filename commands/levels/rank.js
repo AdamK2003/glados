@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const { getLevel } = require(process.env.ROOTDIR + '/functions/levels.js') 
 
+let embed
+
 const Level = require(process.env.ROOTDIR + '/models/level.js')
 const mongoose = require('mongoose')
 const db = process.env.DB
@@ -28,7 +30,7 @@ module.exports.run = async (client, message, args) => {
   if(obj = null)
   user = message.mentions.members.first().user
   }
-  const embed = new Discord.MessageEmbed()
+  embed = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setTitle(user.tag)
   .addField("Level " + obj.level, obj.relExp + "/" + obj.relNextLvl + " XP")
