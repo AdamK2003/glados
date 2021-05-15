@@ -1,5 +1,5 @@
 {
-  "status": "online",
-  "presenceType": "WATCHING",
-  "presenceName": "devs facepalm"
+	"status": "online",
+	"activityType": "PLAYING",
+	"activityName": "with variables"
 }

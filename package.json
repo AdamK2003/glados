@@ -17,6 +17,7 @@
     "get-value": "^3.0.1",
     "md5": "^2.3.0",
     "mongoose": "^5.11.20",
-    "penguin-handler": "^2.0.9"
+    "penguin-handler": "^2.0.9",
+    "update-json-file": "^1.1.1"
   }
 }
