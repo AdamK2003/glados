@@ -4,8 +4,8 @@ let allowedStatus = ['online','idle','invisible','dnd']
 let allowedActivity = ['PLAYING','WATCHING','LISTENING','STREAMING','COMPETING']
 let status, activity, activityName
 module.exports.help = {
-  name: "rank",
-  aliases: ["level"]
+  name: "botstatus",
+  aliases: []
 }
 
 module.exports.run = async (client, message, args) => {
