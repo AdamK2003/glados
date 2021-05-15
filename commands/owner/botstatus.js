@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
     status = allowedStatus.includes(args[1].toLowerCase()) ? args[1].toLowerCase() : 'online'
     activity = allowedActivity.includes(args[2].toUpperCase()) ? args[2].toUpperCase() : 'PLAYING'
     activityName = args.slice(3).join(' ')
-
+if(args[2]) {
     client.user.setPresence({
     status: status,
     activity: {
@@ -21,4 +21,9 @@ module.exports.run = async (client, message, args) => {
         type: activity
     }
     })
+} else {
+    client.user.setPresence({
+        status: status
+    })
+}
 }
