@@ -29,13 +29,14 @@ client.login(botToken)
 
 client.on('ready', () => {
   handle('./commands')
-    client.user.setPresence({
+
+  client.user.setPresence({
     status: presence.status,
     activity: {
-        name: presence.activityName,
-        type: presence.activityType
-    }
-    })
+      name: presence.activityName,
+      type: presence.activityType
+  }
+  })
 })
 
 client.on('message', msg => {
