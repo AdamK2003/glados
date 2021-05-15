@@ -12,6 +12,8 @@ module.exports.run = async (client, message, args) => {
     if(message.author.id != '206125763328606208') return
     if(args[1]) {
         status = allowedStatus.includes(args[1].toLowerCase()) ? args[1].toLowerCase() : 'online'
+    } else {
+        return
     }
     if(args[2]) {
         activity = allowedActivity.includes(args[2].toUpperCase()) ? args[2].toUpperCase() : 'PLAYING'
