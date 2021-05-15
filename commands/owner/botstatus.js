@@ -1,5 +1,9 @@
 const Discord = require('discord.js')
 
+const updateJsonFile = require('update-json-file')
+const presence = require(`${process.env.ROOTDIR}/presence.json`)
+const jsonPath = process.env.ROOTDIR + '/presence.json'
+
 let allowedStatus = ['online','idle','invisible','dnd']
 let allowedActivity = ['PLAYING','WATCHING','LISTENING','STREAMING','COMPETING']
 let status, activity, activityName
@@ -17,6 +21,8 @@ module.exports.run = async (client, message, args) => {
     }
     if(args[2]) {
         activity = allowedActivity.includes(args[2].toUpperCase()) ? args[2].toUpperCase() : 'PLAYING'
+    } else {
+        activity = presence.activityType
     }
     if(args[3]) {
         activityName = args.slice(3).join(' ')
@@ -36,4 +42,20 @@ if(args[2]) {
         status: status
     })
 }
+
+
+if(!args[2]) {
+updateJsonFile(jsonPath, (data) => {
+  data.status = status
+  return data
+})
+} else {
+updateJsonFile(jsonPath, (data) => {
+  data.status = status
+  data.activityType = activity
+  data.activityName = activityName
+  return data
+})
+}
+
 }

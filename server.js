@@ -15,6 +15,8 @@ const { handle, run } = require('penguin-handler')
 
 const { handleLevel } = require(__dirname + '/functions/levels.js') 
 
+const presence = require(__dirname + '/presence.json')
+
 
 botToken = process.env.TOKEN
 prefix = process.env.PREFIX
@@ -25,7 +27,17 @@ prefix = process.env.PREFIX
 client = new Discord.Client()
 client.login(botToken)
 
-client.on('ready', () => handle('./commands'))
+client.on('ready', () => {
+  handle('./commands')
+    client.user.setPresence({
+    status: presence.status,
+    activity: {
+        name: presence.activityName,
+        type: presence.activityType
+    }
+    })
+})
+
 client.on('message', msg => {
   handleUpdate(prefix, msg)
   handleLevel(client, msg)
