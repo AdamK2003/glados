@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.21.2",
     "discord.js": "^12.5.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "get-value": "^3.0.1",
     "md5": "^2.3.0",
     "mongoose": "^5.11.20",
