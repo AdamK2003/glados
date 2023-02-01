@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "get-value": "^3.0.1",
     "md5": "^2.3.0",
-    "mongoose": "^5.11.20",
+    "mongoose": "^5.13.15",
     "penguin-handler": "^2.0.9",
     "update-json-file": "^1.1.1"
   }
